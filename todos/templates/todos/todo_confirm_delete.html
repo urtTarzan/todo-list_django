@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+    excluir - tarefa
+{% endblock title %}
+
+{% block content %}
+    <h1>excluir Tarefa</h1>
+    <p>tem certeza que deseja ecluir a tarefa <strong>{{ todo.title }}</strong></p>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <button type="submit" class="btn btn-danger">excluir</button>
+        <a href="{% url 'todo_list'%}" class="btn btn-primary">cancelar</a>
+        
+    </form>
+
+{% endblock content %}
